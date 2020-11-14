@@ -1,0 +1,357 @@
+// VARIABLES //////////////////////////////////////////////////////////////
+
+$redLogo: rgb(205, 1, 1);
+$greenFlag: rgb(0, 140, 69);
+$greyL: lightgrey;
+$greyM: darkgrey;
+
+// ZERO POINTS  //////////////////////////////////////////////////////////
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// CONNECTION TEST /////////////////////////////////////////////////////////
+
+body,
+html {
+    background-color: $greyL;
+    // background-image: url(../imagesMenu/pepperonipizza.jpg);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    font-family: sans-serif;
+}
+
+//  MOBILE  //////////////////////////////////////////////////////////////////
+
+// grid container  /////
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 80px 40px repeat(4 1fr) 40px;
+    grid-gap: 5px;
+    padding: 10px;
+    min-height: 100vh;
+    width: 100%;
+    // header  /////
+
+    .header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        border: 3px solid black;
+        padding-bottom: 0;
+        background-color: white;
+
+        .green {
+            .logo {
+                display: block;
+                margin: 0 auto 0 auto;
+                height: 60px;
+            }
+            background-color: green;
+            max-height: auto;
+            min-width: 60px;
+            border-right: 2px solid black;
+        }
+
+        .white {
+            background-color: white;
+            max-height: auto;
+            min-width: 100px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 60px;
+            h6 {
+                padding-top: 10px;
+                // margin-bottom: 0;
+                // padding-bottom: 0;
+            }
+            h5 {
+                font-size: 0.75rem;
+                font-family: "Pacifico";
+            }
+            #activePhone {
+                color: black;
+                font-weight: bold;
+            }
+            @media only screen and (max-width: 767px) {
+                .regPhone {
+                    display: none;
+                }
+            }
+        }
+
+        .red {
+            background-color: $redLogo;
+            max-height: auto;
+            width: 100%;
+            font-size: 1rem;
+            border-left: 2px solid black;
+        }
+    }
+
+    //  main body /////
+    main {
+        .navigation {
+            border: 3px solid black;
+            border-radius: 35px;
+            text-align: center;
+            background-color: $greyL;
+            padding: 0 10px;
+            margin: 0 120px 25px;
+           
+
+        .freeDelivery {
+            .delivery {
+                display: grid;
+                grid-template-columns: 15% 1fr 15%;
+                border: 3px solid black;
+                box-shadow: 3px 5px black;
+                margin-top: 7px;
+
+                .icons {
+                    display: block;
+                    width: 40px;
+                    padding-top: 8px;
+                    margin: 0 auto 0 auto;
+                }
+                background-color: white;
+
+                .center {
+                    background-color: rgb(205, 1, 1);
+                    max-height: 100%;
+                    color: white;
+                    h5,
+                    h3 {
+                        text-align: center;
+                    }
+                    h5 {
+                        font-size: 0.75rem;
+                    }
+
+                    .blinking {
+                        animation: blinkingText 2s infinite;
+                    }
+                    @keyframes blinkingText {
+                        0% {
+                            color: white;
+                        }
+                        49% {
+                            color: white;
+                        }
+                        60% {
+                            color: transparent;
+                        }
+                        99% {
+                            color: transparent;
+                        }
+                        100% {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .missionStatement {
+            border: 5px solid black;
+            background-image: url("../images/ingredientsfaded.png");
+            background-color: #cd853f;
+            background-size: cover;
+            margin: 10px 15px 0 10px;
+            border-radius: 15px;
+            box-shadow: 3px 5px black;
+            @media only screen and (max-width: 767px) {
+                display: none;
+            }
+
+            h4 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                color: black;
+                font-style: italic;
+
+                font-size: 0.75rem;
+            }
+        }
+
+        .specials {
+            background-color: $greenFlag;
+            border: 3px solid black;
+            margin-top: 10px;
+
+            .dailySpecialsign {
+                display: inline;
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: -5px;
+                border: 4px solid black;
+                box-shadow: 9px 5px black;
+            }
+
+            > .item {
+                background-color: $greenFlag;
+                border-bottom-style: dashed;
+
+                > .image {
+                    height: 75px;
+                    background-size: cover;
+                    background-position: center center;
+                }
+
+                .name1,
+                .price,
+                h4,
+                .name2 {
+                    text-align: center;
+                    color: white;
+                    font-size: 0.75rem;
+                }
+
+                .day {
+                    margin-top: 10px;
+                }
+
+                .name2 {
+                    margin-top: 5px;
+                }
+
+                .price {
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .locationGoogle {
+        background-color: $greenFlag;
+        border: 3px solid black;
+        margin-top: 10px;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+    iframe {
+        // left: 30px;
+        // top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        padding: 0 auto 0 auto;
+    }
+
+    footer {
+        > div {
+            border: 3px solid black;
+            background-color: $redLogo;
+            color: white;
+            text-align: center;
+
+            pre {
+                font-size: 0.75rem;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+        }
+
+        #underlinesFooter {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+//  TABLET  ///////////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-width: 320px) {
+    body,
+    html {
+        background-image: url(../imagesMenu/pepperonipizza.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .gridContainer {
+            grid-gap: 50px;
+
+            header {
+                .white {
+                    #activePhone {
+                        display: none;
+                    }
+                }
+            }
+
+            main {
+                .freeDelivery {
+                    .delivery {
+                        border: 5px solid black;
+                        height: 100px;
+                        .icons {
+                            width: 80px;
+                            padding-top: 15px;
+                        }
+
+                        .center {
+                            h3,
+                            h5 {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+
+                .missionStatement {
+                    h4,
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .specials {
+                    margin: 25px 60px 0;
+                    .dailySpecialsign {
+                        width: 70%;
+                        height: auto;
+                        margin-top: -12px;
+                        margin-bottom: 10px;
+                        margin-left: -15px;
+                        border: 4px solid black;
+                        box-shadow: 12px 8px black;
+                    }
+
+                    .item {
+                        .image {
+                            height: 150px;
+                        }
+
+                        h4,
+                        .name1,
+                        .price,
+                        .name2 {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            footer {
+                div {
+                    pre {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// DESKTOP  ///////////////////////////////////////////////////////////////////////////@include
